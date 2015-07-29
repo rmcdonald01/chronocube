@@ -30,14 +30,32 @@
 <a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h2>
 
 <ul>
-<li><a href="https://raw.githubusercontent.com/pablopunk/chronocube/master/dist/Chronocube.dmg">Download for OS X</a></li>
-<li>Other platforms: check Build instructions below</li>
+<li><a href="https://raw.githubusercontent.com/pablopunk/chronocube/master/dist/osx/Chronocube.dmg">Download for OS X</a></li>
+<li><a href="https://raw.githubusercontent.com/pablopunk/chronocube/master/dist/win/Chronocube-Setup.exe">Download for Windows</a></li>
+<li>Linux: check Build instructions below</li>
 </ul>
 
 <h2>
 <a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h2>
 
-<p>Use the <em>MAKEFILE</em> to build the executable for all platforms (you'll need <em>electron-packager</em>)</p>
+<p>Use the <em>MAKEFILE</em> to build the executable for all platforms (you'll need <em><a href="https://github.com/maxogden/electron-packager">electron-packager</a></em>):</p>
+
+<ul>
+<li>
+<code>make all</code> creates all builds (osx, win and linux for all architectures) inside <code>dist/</code> and creates both osx and win installers</li>
+<li>
+<code>make osx</code> creates the .dmg installer for darwin x64 in <code>dist/osx</code>
+</li>
+<li>
+<code>make win32</code> creates the .exe installer for win ia32 in <code>dist/win</code>
+</li>
+<li>
+<code>make linux</code> creates the build folder inside <code>dist/</code> for both ia32 and x64</li>
+<li>
+<code>make linux32</code> creates the build folder inside <code>dist/</code> for ia32</li>
+<li>
+<code>make linux64</code> creates the build folder inside <code>dist/</code> for x64</li>
+</ul>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
@@ -48,10 +66,10 @@
 <a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>To do</h2>
 
 <ul>
-<li>LocalStorage to save solves</li>
 <li>Display best solve</li>
 <li>Display averages</li>
 <li>Implement inspection timer</li>
+<li>Background picker</li>
 </ul>
 
       <footer class="site-footer">
