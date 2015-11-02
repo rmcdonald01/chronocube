@@ -12,11 +12,10 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Chronocube</h1>
-      <h2 class="project-tagline">Simple app to time your Rubik&#39;s Cube solves</h2>
-      <a href="https://github.com/pablopunk/chronocube" class="btn">View on GitHub</a>
+      <h2 class="project-tagline">Simple app to time and classify your Rubik&#39;s Cube solves</h2>
+      <a href="https://github.com/pablopunk/chronocube" class="btn">GitHub</a>
       <a href="http://chronocube.pablopunk.com" class="btn">Use the webapp</a>
-      <a href="https://raw.githubusercontent.com/pablopunk/chronocube/master/dist/osx/Chronocube.dmg" class="btn">Download for Mac</a>
-      <a href="https://raw.githubusercontent.com/pablopunk/chronocube/master/dist/win/Chronocube-Setup.exe" class="btn">Download for Windows</a>
+      <a href="https://github.com/pablopunk/chronocube/releases" class="btn">Downloads</a>
     </section>
 
     <section class="main-content">
@@ -25,63 +24,13 @@
 
 <p>Simple app to time your Rubik's Cube solves.</p>
 
-<p><img src="https://raw.githubusercontent.com/pablopunk/chronocube/master/img/icon200px.png" alt="icon"></p>
+<p><img src="https://raw.githubusercontent.com/pablopunk/chronocube/master/src/img/icon200px.png" alt="icon"></p>
 
 <p>This app is cross-platform as it's created with <em>HTML+CSS+JS</em> and it's packaged on <em><a href="https://github.com/atom/electron">Electron</a></em>, a tool to create apps from webapps, so you can use it as a native app on your desktop.</p>
 
 <ul>
 <li>Try it online <a href="http://chronocube.pablopunk.com">here</a>
 </li>
-</ul>
-
-<h2>
-<a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h2>
-
-<ul>
-<li><a href="https://raw.githubusercontent.com/pablopunk/chronocube/master/dist/osx/Chronocube.dmg">Download for OS X</a></li>
-<li><a href="https://raw.githubusercontent.com/pablopunk/chronocube/master/dist/win/Chronocube-Setup.exe">Download for Windows</a></li>
-<li>Linux: check Build instructions below</li>
-</ul>
-
-<h2>
-<a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h2>
-
-<p>Use the <em>MAKEFILE</em> to build the executable for all platforms (you'll need <em><a href="https://github.com/maxogden/electron-packager">electron-packager</a></em>):</p>
-
-<ul>
-<li>
-<code>make all</code> creates all builds (osx, win and linux for all architectures) inside <code>dist/</code> and creates both osx and win installers</li>
-<li>
-<code>make osx</code> creates the .dmg installer for darwin x64 in <code>dist/osx</code>
-</li>
-<li>
-<code>make win32</code> creates the .exe installer for win ia32 in <code>dist/win</code>
-</li>
-<li>
-<code>make linux</code> creates the build folder inside <code>dist/</code> for both ia32 and x64</li>
-<li>
-<code>make linux32</code> creates the build folder inside <code>dist/</code> for ia32</li>
-<li>
-<code>make linux64</code> creates the build folder inside <code>dist/</code> for x64</li>
-</ul>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<p>Use it as you wish (but give me credit cause I want to be famous)
-Also credits to:</p>
-
-<ul>
-<li><a href="https://github.com/cubing/jsss">Randome state scrambles</a></li>
-<li><a href="http://uigradients.com">Background gradients</a></li>
-</ul>
-
-<h2>
-<a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>To do</h2>
-
-<ul>
-<li>Implement inspection timer</li>
-<li>Classify solves</li>
 </ul>
 
       <footer class="site-footer">
