@@ -1,0 +1,35 @@
+html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(#1abc9c 30%, #2ecc71);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#content {
+  position: relative;
+  text-align: center;
+}
+
+#screenshot {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#icon img {
+  position: absolute;
+  width: 4em;
+}
