@@ -3,14 +3,33 @@
   <head>
     <meta charset="UTF-8">
     <title>Chronocube by pablopunk</title>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+    $( document ).ready(function()
+    {
+    });
+    </script>
   </head>
 
   <body>
-    <div id="content">
-      <div id="screenshot"><img src="https://s3.amazonaws.com/f.cl.ly/items/360K0M2o1M2i0X32212d/Captura%20de%20pantalla%202015-12-14%20a%20las%207.28.36.png?v=b8fd4955" alt="screenshot"></div>
-      <div id="icon"><img src="https://raw.githubusercontent.com/pablopunk/chronocube/master/src/img/icon200px.png" alt="icon"></div>
-    </div>
+    <center>
+      <p class="tit">Chronocube</p>
+      <p class="subtit">Your rubik's cube solves.</p>
+      <img id="screenshot" src="img/screenshot.png" alt="screenshot"/>
+      <div id="but-bar">
+        <a href="#">
+          <i class="but fa fa-arrow-circle-o-down" onmouseover="document.getElementById('label').innerText='Download'" onmouseout="document.getElementById('label').innerText=''"></i>
+        </a>
+        <a href="#">
+          <i class="but fa fa-desktop" style="font-size:85%;" onmouseover="document.getElementById('label').innerText='Web app'" onmouseout="document.getElementById('label').innerText=''"></i>
+        </a>
+        <a href="#">
+          <i class="but fa fa-github" onmouseover="document.getElementById('label').innerText='Github'" onmouseout="document.getElementById('label').innerText=''"></i>
+        </a>
+      </div>
+      <span id="label"></span>
+    </center>
   </body>
 </html>
