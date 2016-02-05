@@ -4,7 +4,6 @@ html {
   padding: 0;
 }
 body {
-  height: 100%;
   margin: 0;
   padding-top: 4vh;
   background: linear-gradient( #6a3093 , #a044ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -13,7 +12,7 @@ body {
   font-family: Avenir, Futura, sans-serif;
 }
 
-.tit {
+#tit {
     margin-top: 4vh;
     margin-bottom: 0.2em;
     font-size: 2em;
@@ -21,7 +20,7 @@ body {
     font-weight: bold;
 }
 
-.subtit {
+#subtit {
     margin-top: 0;
     margin-bottom: 0.5em;
     color: white;
@@ -29,6 +28,7 @@ body {
 }
 
 #screenshot {
+  position: relative;
   width: 30em;
   border-radius: 2px;
 }
@@ -55,10 +55,4 @@ body {
 #label {
   color: white;
   font-size: 1.5em;
-}
-
-footer {
-  color: white;
-  opacity: 0.6;
-  margin-left: 1%;
 }
