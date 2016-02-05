@@ -56,3 +56,9 @@ body {
   color: white;
   font-size: 1.5em;
 }
+
+footer {
+  color: white;
+  opacity: 0.6;
+  margin-left: 1%;
+}
