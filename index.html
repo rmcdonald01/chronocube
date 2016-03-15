@@ -17,6 +17,7 @@
         }
       }
     }
+    
     $( document ).ready(function()
     {
       // initial state
@@ -38,7 +39,33 @@
       $("#subtit").animate({
 					opacity: '1',
 			}, {duration: 3000, queue: false}, 'easeInOutCirc');
+      
+      updateLinkWithLatestRelease() // call AJAX function
     });
+    
+    function getDownloadLink(release, os) {
+      var githubURL = 'https://github.com/pablopunk/chronocube/releases/download/' +release
+      if (os === 'Mac') githubURL += '/Chronocube-Mac.dmg';
+      else if (os === 'Windows') githubURL += '/Chronocube-Windows-Installer.exe';
+      else return 'https://github.com/pablopunk/chronocube/releases'; // no file for other OS
+      return githubURL;
+    }
+    
+    function getOS() {
+      var platform = navigator.platform;
+      if (platform.match(/(Mac)/i)) return 'Mac';
+      if (platform.match(/(Win)/i)) return 'Windows';
+      return 'Other';
+    }
+    
+    function updateLinkWithLatestRelease() {
+      $.getJSON("https://api.github.com/repos/pablopunk/chronocube/releases/latest").done(function (release) {
+        var os = getOS()
+        var link = getDownloadLink(release.tag_name, os)
+        $('#downloadLink').attr("href", link)
+        if (os !== 'Other') $('#downloadLink').attr("title", 'Download for '+os);
+      });
+    }
     </script>
   </head>
 
@@ -49,8 +76,8 @@
       <div id="content">
         <img id="screenshot" src="img/screenshot.png" alt="screenshot"/>
         <div id="but-bar">
-          <a href="https://github.com/pablopunk/chronocube/releases">
-            <i class="but fa fa-arrow-circle-o-down" onmouseover="document.getElementById('label').innerText='Download'" onmouseout="document.getElementById('label').innerText=''"></i>
+          <a href="https://github.com/pablopunk/chronocube/releases" id="downloadLink" title="Download">
+            <i class="but fa fa-arrow-circle-o-down" onmouseover="document.getElementById('label').innerText=''+this.parentNode.title" onmouseout="document.getElementById('label').innerText=''"></i>
           </a>
           <a href="http://chronocube.pablopunk.com">
             <i class="but fa fa-desktop" style="font-size:85%;" onmouseover="document.getElementById('label').innerText='Web app'" onmouseout="document.getElementById('label').innerText=''"></i>
