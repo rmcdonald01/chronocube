@@ -20,6 +20,9 @@
     
     $( document ).ready(function()
     {
+      $('#screenshot').mouseover(changeScreenshotToBlack); // bind
+      $('#screenshot').mouseout (changeScreenshotToWhite); 
+      
       // initial state
       $('#tit').css("opacity", 0);
       $('#subtit').css("opacity", 0);
@@ -66,6 +69,18 @@
         if (os !== 'Other') $('#downloadLink').attr("title", 'Download for '+os);
       });
     }
+    
+    function changeScreenshotToBlack() {
+      $('#screenshot').fadeOut( 200, function() {
+        $(this).attr('src', 'img/screenshot-black.png').fadeIn(200)
+      })
+    }
+    
+    function changeScreenshotToWhite() {
+      $('#screenshot').fadeOut( 200, function() {
+        $(this).attr('src', 'img/screenshot-white.png').fadeIn(200)
+      })
+    }
     </script>
   </head>
 
@@ -74,7 +89,7 @@
       <div id="tit">Chronocube</div>
       <div id="subtit">Your rubik's cube solves.</div>
       <div id="content">
-        <img id="screenshot" src="img/screenshot.png" alt="screenshot"/>
+        <img id="screenshot" src="img/screenshot-white.png" alt="screenshot"/>
         <div id="but-bar">
           <a href="https://github.com/pablopunk/chronocube/releases" id="downloadLink" title="Download">
             <i class="but icon ion-android-download" onmouseover="document.getElementById('label').innerText=''+this.parentNode.title" onmouseout="document.getElementById('label').innerText=''"></i>
