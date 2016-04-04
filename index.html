@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript">
     function sleep(milliseconds)
     {
@@ -34,18 +36,24 @@
         "opacity": 0,
         "margin-top": "-20vh"
       });
+      $('.buttons').css({
+        "margin-top": "100vh"
+      });
 
       // animations
       $('#content').animate({
         opacity: 1,
         "margin-top": "+=20vh"
-      },{duration: 1000, queue: false}, 'easeInOutCirc');
+      }, 2000, 'easeInOutExpo');
       $("#tit").animate({
 					opacity: '1',
-			}, {duration: 3000, queue: false}, 'easeInOutCirc');
+			}, 3000, 'easeInOutCirc');
       $("#subtit").animate({
 					opacity: '1',
-			}, {duration: 3000, queue: false}, 'easeInOutCirc');
+			}, 3000, 'easeInOutCirc');
+      $('.buttons').animate({
+        "margin-top": "-=100vh"
+      }, 2000, 'easeInOutExpo');
       
       updateLinkWithLatestRelease() // call AJAX function
     });
@@ -70,7 +78,7 @@
         var os = getOS()
         var link = getDownloadLink(release.tag_name, os)
         $('#downloadLink').attr("href", link)
-        if (os !== 'Other') $('#downloadLink').attr("title", 'Download for '+os);
+        if (os !== 'Other') $('#os').text('for '+os);
       });
     }
     
@@ -95,18 +103,11 @@
       <div id="subtit">Your rubik's cube solves.</div>
       <div id="content">
         <img id="screenshot" src="img/screenshot-white.png" alt="screenshot"/>
-        <div id="but-bar">
-          <a href="https://github.com/pablopunk/chronocube/releases" id="downloadLink" title="Download">
-            <i class="but icon ion-android-download" onmouseover="document.getElementById('label').innerText=''+this.parentNode.title" onmouseout="document.getElementById('label').innerText=''"></i>
-          </a>
-          <a href="http://chronocube.pablopunk.com">
-            <i class="but icon ion-social-html5-outline" onmouseover="document.getElementById('label').innerText='Web app'" onmouseout="document.getElementById('label').innerText=''"></i>
-          </a>
-          <a href="https://github.com/pablopunk/chronocube">
-            <i class="but icon ion-social-github-outline" onmouseover="document.getElementById('label').innerText='Github'" onmouseout="document.getElementById('label').innerText=''"></i>
-          </a>
+        <div class="buttons">
+          <div class="row"><a class="button button-link" href="https://github.com/pablopunk/chronocube/releases/latest" id="downloadLink"><i class="icon ion-ios-cloud-download-outline"></i> Download <span id="os"></span></a></div>
+          <div class="row"><a class="button button-link" href="http://chronocube.pablopunk.com"><i class="icon ion-social-html5-outline"></i> Use it online</a></div>
+          <div class="row"><a class="button button-link" href="https://github.com/pablopunk/chronocube"><i class="icon ion-code"></i> Source code</a></div>
         </div>
-        <span id="label"></span>
       </div>
     </div>
     
